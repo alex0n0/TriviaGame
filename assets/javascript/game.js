@@ -5,7 +5,7 @@ let regionStart;
 let regionQuestion;
 let regionEnd;
 
-let questionsPerRound = 5;
+let questionsPerRound = 10;
 let questionNumber = 0;
 let questionsCorrect = 0;
 
