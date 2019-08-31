@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TriviaGame</title>
+    <title>Trivia Game</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -20,7 +20,8 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<body class="bg-light">
+<body class="bg-secondary">
+    <!-- header content -->
     <header class="bg-secondary text-light py-3">
         <div class="container">
             <div class="row">
@@ -29,8 +30,8 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-6 col-sm-3 text-center">Wins: ${0}</div>
-                <div class="col-6 col-sm-3 text-center">Losses: ${0}</div>
+                <div class="col-6 col-sm-3 text-center" id="pWins"></div>
+                <div class="col-6 col-sm-3 text-center" id="pLosses"></div>
             </div>
         </div>
     </header>
@@ -39,51 +40,15 @@
 
 
 
-    <main class="pt-3">
-        <!-- <div class="container region" id="region-start">
+
+
+    <!-- main content -->
+    <main class="bg-light py-3">
+        <!-- starting content -->
+        <div class="container region" id="regionStart">
             <div class="row">
                 <div class="col-12 text-center">
-                    <button class="btn btn-primary">START QUIZ</button>
-                </div>
-            </div>
-        </div> -->
-
-
-        <div class="container region" id="region-questions">
-            <div class="row progress-bar-outer">
-                <div class="progress-bar-inner"></div>
-            </div>
-            <div class="row">
-                timer
-            </div>
-            <div class="row">
-                <img src="" alt="optional image, generate when needed">
-                <form class="mb-3">
-                    <label for="radio-a">
-                        <input name="group" id="radio-a" type="radio">
-                        stegosaurus
-                    </label>
-
-                    <label for="radio-b">
-                        <input name="group" id="radio-b" type="radio">
-                        tyrannosaurus
-                    </label>
-
-                    <label for="radio-c">
-                        <input name="group" id="radio-c" type="radio">
-                        mammoth
-                    </label>
-
-                    <label for="radio-d">
-                        <input name="group" id="radio-d" type="radio">
-                        chicken
-                    </label>
-                </form>
-
-            </div>
-            <div class="row">
-                <div class="col-12 text-center">
-                    <button class="btn btn-primary">CONFIRM ANSWER</button>
+                    <button id="button-start" class="btn btn-primary">START QUIZ</button>
                 </div>
             </div>
         </div>
@@ -93,45 +58,89 @@
 
 
 
-        <div class="container region" id="region-end">
-            <div class="row">
-                <p class="text-center w-100">timeout|incorrect|correct</p>
-            </div>
-            <div class="row">
-                <p class="text-center w-100">correct answer was: ${answer}</p>
+
+        <!-- question content -->
+        <div class="container region" id="regionQuestion">
+            <div class="row progressBarOuter mb-3">
+                <div class="progressBarInner"></div>
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <button class="btn btn-primary">NEXT (${5})</button>
+                    <p id="pTime"></p>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="col-12 col-sm-10 col-lg-6" id="regionImage">
+                    <!-- <img class="img-fluid w-100" src="" alt=""> -->
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-12 text-center">
+                        <p id="pQuestion"></p>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-12">
+                    <form class="mb-3">
+                        <label for="radio-a">
+                            <input name="group" id="radio-a" type="radio" class="mr-3"><span></span>
+                        </label>
+
+                        <label for="radio-b">
+                            <input name="group" id="radio-b" type="radio" class="mr-3"><span></span>
+                        </label>
+
+                        <label for="radio-c">
+                            <input name="group" id="radio-c" type="radio" class="mr-3"><span></span>
+                        </label>
+
+                        <label for="radio-d">
+                            <input name="group" id="radio-d" type="radio" class="mr-3"><span></span>
+                        </label>
+                    </form>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button id="buttonCheck" class="btn btn-primary">CONFIRM ANSWER</button>
                 </div>
             </div>
         </div>
 
 
-        <!-- <div class="container region" id="region-round-end">
+
+
+
+        <!-- result content -->
+        <div class="container region" id="regionReview">
             <div class="row">
-                <p>5 correct, 6 wrong</p>
+                <p class="text-center w-100" id="pReviewInfo"></p>
             </div>
             <div class="row">
-                <p>WINNER (48% correct)</p>
+                <p class="text-center w-100" id="pReviewResult"></p>
             </div>
             <div class="row">
-                <p>home screen in 5, 4, 3, 2, 1...</p>
+                <div class="col-12 text-center">
+                    <button id="buttonNext" class="btn btn-primary"></button>
+                </div>
             </div>
-        </div> -->
+        </div>
     </main>
 
-    
 
 
-    <footer class="bg-secondary">asdf</footer>
 
 
+
+
+
+    <!-- footer content -->
+    <footer class="bg-secondary text-center"></footer>
+
+
+    <script type="text/javascript" src="assets/javascript/questionbank.js"></script>
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 
 </html>
-
-
-<!-- question -->
-<!-- question, answer, other options, difficulty -->

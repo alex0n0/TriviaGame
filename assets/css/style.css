@@ -1,5 +1,5 @@
 body {
-  min-height: 100vh;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7,6 +7,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 header {
@@ -17,16 +20,13 @@ header {
 
 main {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 100%;
-          flex: 1 1 100%;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  overflow-y: scroll;
   position: relative;
 }
 
-main .region {
-  border: 1px solid red;
-}
-
-main #region-start {
+main #regionStart {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -34,15 +34,20 @@ main #region-start {
           transform: translateX(-50%);
 }
 
-main .progress-bar-outer {
+main .progressBarOuter {
   background-color: #e6e6e6;
   height: 4px;
 }
 
-main .progress-bar-outer .progress-bar-inner {
+main .progressBarOuter .progressBarInner {
   height: 100%;
-  background-color: green;
-  width: 80%;
+  background-color: black;
+  width: 100%;
+}
+
+main .progressBarOuter .progressBarTransition {
+  -webkit-transition: 0.5s width;
+  transition: 0.5s width;
 }
 
 main form {
@@ -59,6 +64,9 @@ main form {
 main form label {
   margin: 0px;
   padding: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 main form label:hover {
@@ -78,7 +86,17 @@ main button {
 
 footer {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+      -ms-flex: 0 0 2rem;
+          flex: 0 0 2rem;
+  color: #b4bec8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=style.css.map */

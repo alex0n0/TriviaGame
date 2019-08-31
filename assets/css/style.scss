@@ -25,9 +25,10 @@ $break-xl: 1200px;
 }
 
 body {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 header {
@@ -35,26 +36,30 @@ header {
 }
 
 main  {
-    flex: 1 1 100%;
+    flex: 1 1 auto;
+    overflow-y: scroll;
     position: relative;
 
-    .region {
-        border: 1px solid red;
-    }
-    #region-start {
+    // .region {
+    //     border: 1px solid red;
+    // }
+    #regionStart {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translateX(-50%);
     }
 
-    .progress-bar-outer {
+    .progressBarOuter {
         background-color: rgb(230, 230, 230);
         height: 4px;
-        .progress-bar-inner {
+        .progressBarInner {
             height: 100%;
-            background-color: green;
-            width: 80%;
+            background-color: black;
+            width: 100%;
+        }
+        .progressBarTransition {
+            transition: 0.5s width;
         }
     }
     form {
@@ -64,6 +69,9 @@ main  {
         label {
             margin: 0px;
             padding: 8px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
             &:hover {
                 cursor: pointer;
                 background-color: gainsboro;
@@ -84,5 +92,9 @@ main  {
 }
 
 footer {
-    flex: 0 0 auto;
+    flex: 0 0 2rem;
+    color: rgb(180, 190, 200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
