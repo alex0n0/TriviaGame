@@ -1,0 +1,88 @@
+$break-sm: 576px;
+$break-md: 768px;
+$break-lg: 992px;
+$break-xl: 1200px;
+
+@mixin break-sm {
+    @media (min-width: $break-sm) {
+        @content;
+    }
+}
+@mixin break-md {
+    @media (min-width: $break-md) {
+        @content;
+    }
+}
+@mixin break-lg {
+    @media (min-width: $break-lg) {
+        @content;
+    }
+}
+@mixin break-xl {
+    @media (min-width: $break-xl) {
+        @content;
+    }
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    flex: 0 0 auto;
+}
+
+main  {
+    flex: 1 1 100%;
+    position: relative;
+
+    .region {
+        border: 1px solid red;
+    }
+    #region-start {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .progress-bar-outer {
+        background-color: rgb(230, 230, 230);
+        height: 4px;
+        .progress-bar-inner {
+            height: 100%;
+            background-color: green;
+            width: 80%;
+        }
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        label {
+            margin: 0px;
+            padding: 8px;
+            &:hover {
+                cursor: pointer;
+                background-color: gainsboro;
+            }
+        }
+    }
+
+    button {
+        width: 100%;
+        @include break-lg {
+            width: 40rem;
+        }
+    }
+
+    // .row {
+    //     border: 1px solid green;
+    // }
+}
+
+footer {
+    flex: 0 0 auto;
+}

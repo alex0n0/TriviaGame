@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>TriviaGame</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -20,21 +20,118 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<body>
+<body class="bg-light">
+    <header class="bg-secondary text-light py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1>Trivia Game</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-6 col-sm-3 text-center">Wins: ${0}</div>
+                <div class="col-6 col-sm-3 text-center">Losses: ${0}</div>
+            </div>
+        </div>
+    </header>
 
-    <!-- start page with button and score -->
-    <!-- quiz start -->
-    <!--  -->
-    <!--  -->
-    <!--  -->
-    <!--  -->
-    <!--  -->
-    <!--  -->
-    <!--  -->
-    <!--  -->
+
+
+
+
+    <main class="pt-3">
+        <!-- <div class="container region" id="region-start">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button class="btn btn-primary">START QUIZ</button>
+                </div>
+            </div>
+        </div> -->
+
+
+        <div class="container region" id="region-questions">
+            <div class="row progress-bar-outer">
+                <div class="progress-bar-inner"></div>
+            </div>
+            <div class="row">
+                timer
+            </div>
+            <div class="row">
+                <img src="" alt="optional image, generate when needed">
+                <form class="mb-3">
+                    <label for="radio-a">
+                        <input name="group" id="radio-a" type="radio">
+                        stegosaurus
+                    </label>
+
+                    <label for="radio-b">
+                        <input name="group" id="radio-b" type="radio">
+                        tyrannosaurus
+                    </label>
+
+                    <label for="radio-c">
+                        <input name="group" id="radio-c" type="radio">
+                        mammoth
+                    </label>
+
+                    <label for="radio-d">
+                        <input name="group" id="radio-d" type="radio">
+                        chicken
+                    </label>
+                </form>
+
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button class="btn btn-primary">CONFIRM ANSWER</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="container region" id="region-end">
+            <div class="row">
+                <p class="text-center w-100">timeout|incorrect|correct</p>
+            </div>
+            <div class="row">
+                <p class="text-center w-100">correct answer was: ${answer}</p>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button class="btn btn-primary">NEXT (${5})</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="container region" id="region-round-end">
+            <div class="row">
+                <p>5 correct, 6 wrong</p>
+            </div>
+            <div class="row">
+                <p>WINNER (48% correct)</p>
+            </div>
+            <div class="row">
+                <p>home screen in 5, 4, 3, 2, 1...</p>
+            </div>
+        </div> -->
+    </main>
+
+    
+
+
+    <footer class="bg-secondary">asdf</footer>
 
 
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 
 </html>
+
+
+<!-- question -->
+<!-- question, answer, other options, difficulty -->
